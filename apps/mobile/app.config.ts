@@ -74,6 +74,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         background: true,
       },
     ],
+    "react-native-webgpu",
+    [
+      "expo-build-properties",
+      {
+        // react-native-skia v3 renders with Vulkan, which needs Android 8.0+.
+        android: { minSdkVersion: 26 },
+      },
+    ],
   ],
   experiments: {
     typedRoutes: true,
