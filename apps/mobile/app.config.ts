@@ -75,6 +75,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     "react-native-webgpu",
+    // Embeds the icon font in the native build; import icons from
+    // "@react-native-vector-icons/material-icons/static".
+    "@react-native-vector-icons/material-icons",
     [
       "expo-build-properties",
       {
