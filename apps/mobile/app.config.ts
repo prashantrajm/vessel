@@ -75,6 +75,15 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     "react-native-webgpu",
+    [
+      "expo-maps",
+      {
+        // iOS renders Apple Maps, which needs no API key.
+        requestLocationPermission: true,
+        locationPermission:
+          "Vessel uses your location to show where you are on the map.",
+      },
+    ],
     // Embeds the icon font in the native build; import icons from
     // "@react-native-vector-icons/material-icons/static".
     "@react-native-vector-icons/material-icons",
