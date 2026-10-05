@@ -84,6 +84,13 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
           "Vessel uses your location to show where you are on the map.",
       },
     ],
+    [
+      "expo-notifications",
+      {
+        // Local notifications only: no remote/background push handling.
+        enableBackgroundRemoteNotifications: false,
+      },
+    ],
     // Embeds the icon font in the native build; import icons from
     // "@react-native-vector-icons/material-icons/static".
     "@react-native-vector-icons/material-icons",
