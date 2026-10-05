@@ -20,6 +20,10 @@ const VARIANTS = {
 
 const variant = VARIANTS[APP_VARIANT];
 
+// Store uploads need a build number that only goes up. On GitHub Actions the
+// workflow run number does that for free; local builds fall back to 1.
+const BUILD_NUMBER = Number(process.env.GITHUB_RUN_NUMBER ?? 1);
+
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: variant.name,
@@ -32,10 +36,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   userInterfaceStyle: "automatic",
   ios: {
     bundleIdentifier: variant.bundleIdentifier,
+    buildNumber: String(BUILD_NUMBER),
     icon: "./assets/expo.icon",
   },
   android: {
     package: variant.bundleIdentifier,
+    versionCode: BUILD_NUMBER,
     adaptiveIcon: {
       backgroundColor: "#E6F4FE",
       foregroundImage: "./assets/images/android-icon-foreground.png",
