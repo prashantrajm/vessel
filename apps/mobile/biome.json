@@ -26,6 +26,18 @@
             "allow": ["error", "warn", "info"]
           }
         }
+      },
+      "style": {
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "@react-native-vector-icons/material-icons": {
+                "message": "Import from \"@react-native-vector-icons/material-icons/static\" instead: the font is embedded in the native build by its config plugin."
+              }
+            }
+          }
+        }
       }
     },
     "domains": {
