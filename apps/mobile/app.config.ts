@@ -58,6 +58,16 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         imageWidth: 76,
       },
     ],
+    [
+      "@kingstinct/react-native-healthkit",
+      {
+        NSHealthShareUsageDescription:
+          "Vessel reads your health data to show your activity and progress.",
+        NSHealthUpdateUsageDescription:
+          "Vessel saves the activity you log to Apple Health.",
+        background: true,
+      },
+    ],
   ],
   experiments: {
     typedRoutes: true,
