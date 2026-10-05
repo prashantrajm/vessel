@@ -91,6 +91,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         enableBackgroundRemoteNotifications: false,
       },
     ],
+    [
+      "expo-widgets",
+      {
+        bundleIdentifier: `${variant.bundleIdentifier}.widgets`,
+        groupIdentifier: `group.${variant.bundleIdentifier}`,
+        widgets: [],
+      },
+    ],
     // Embeds the icon font in the native build; import icons from
     // "@react-native-vector-icons/material-icons/static".
     "@react-native-vector-icons/material-icons",
